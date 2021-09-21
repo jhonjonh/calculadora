@@ -14,4 +14,3 @@ import { CalculadoraComponent } from './components';
 })
 export class CalculadoraModule { }
 
-// anotacao
