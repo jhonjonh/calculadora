@@ -1,16 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 .row{
-    margin: 5% 0 5% 0;
+    margin: 8% 0 8% 0;
 }
 
 #main{
     padding: 2%;
-    box-shadow: -2px 3px 7px 3px rgb(141, 141, 143) ;
+    box-shadow: -2px 3px 7px 3px rgb(110, 110, 112) ;
+    background: radial-gradient(#d6cdcd, #828fd8);
+}
+
+#display{
+    font-family: 'Orbitron', sans-serif;
+    font-size: x-large;
+    background-color: aliceblue;
 }
 
 .btn{
     box-shadow: 1px 1px 2px 1px rgb(43, 43, 77) ;
+    font-weight: 600;
 }
 
 .kz-input-text{
-    box-shadow: inset 1px 1px 2px 1px lightgray;
+    box-shadow: inset 1px 1px 2px 1px rgb(153, 151, 148);
 }
