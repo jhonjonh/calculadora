@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CalculadoraModule } from './calculadora';
-import { CalculadoraComponent } from './calculadora/components';
 
 @NgModule({
   declarations: [
@@ -14,7 +13,6 @@ import { CalculadoraComponent } from './calculadora/components';
     CalculadoraModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  exports:[CalculadoraComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
