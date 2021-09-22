@@ -1,12 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { CalculadoraModule } from './calculadora';
+import { CalculadoraService } from './calculadora/services';
 
 describe('AppComponent', () => {
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [ AppComponent ],
+      providers: [ CalculadoraService ],
+      imports:[ CalculadoraModule ]
+      
     }).compileComponents();
   });
 
