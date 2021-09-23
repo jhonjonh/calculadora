@@ -23,7 +23,6 @@ export class CalculadoraComponent implements OnInit {
    * 
    * @return void - retorna algo vazio/neutro
    */
-
   limpar(): void{
     this.numero1 = '0';
     this.numero2 = 'null';
@@ -38,7 +37,6 @@ export class CalculadoraComponent implements OnInit {
    * @param numConcat string
    * @return string
    */
-
   concatenaNumero(numAtual:string, numConcat:string): string {
     //caso contanha apenas '0' ou null, reinicializar o valor
     if (numAtual === '0' || numAtual == 'null'){
@@ -80,10 +78,22 @@ export class CalculadoraComponent implements OnInit {
     //apenas define a operação caso não exista uma
     if(this.operacao == 'null'){
       this.operacao = operacao;
-      return;
+      //aqui dentro tinha um return que forcava um clique duplo
     }
 
-    if(this.numero2 != 'null') {
+    //operacao que precisa de um numero só
+    if ((this.operacao == 'raiz') || (this.operacao == 'quad') || (this.operacao == 'cubo')) {
+      this.resultado = this.calculadoraService.calcularSci(
+        parseFloat(this.numero1),
+        this.operacao
+      ).toString();
+      this.operacao = 'null';
+      this.numero1 = this.resultado.toString();
+      this.resultado = 'null';
+      console.log('esse é o resultado', this.resultado);
+
+    //operacao que precisa de dois numeros  
+    } else if (this.numero2 != 'null') {
       this.resultado = this.calculadoraService.calcular(
         parseFloat(this.numero1),
         parseFloat(this.numero2),
@@ -102,8 +112,16 @@ export class CalculadoraComponent implements OnInit {
  */
 
   calcular():void{
-    if(this.numero2 == 'null'){
+    if((this.numero1 == 'null')&&(this.numero2 == 'null')){
       return;
+    }
+
+    if((this.operacao == 'raiz') || (this.operacao == 'quad') || (this.operacao == 'cubo')) {
+      this.resultado = this.calculadoraService.calcularSci(
+        parseFloat(this.numero1),
+        this.operacao
+      ).toString();
+      console.log("funcao calcular acionada");
     }
 
     this.resultado = this.calculadoraService.calcular(
