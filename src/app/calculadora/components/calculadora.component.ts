@@ -129,6 +129,10 @@ export class CalculadoraComponent implements OnInit {
       parseFloat(this.numero2),
       this.operacao
     ).toString();
+
+    this.numero1 = this.resultado;
+    this.operacao = 'null';
+    this.numero2 = 'null';
   }
 
   get display(): string{
